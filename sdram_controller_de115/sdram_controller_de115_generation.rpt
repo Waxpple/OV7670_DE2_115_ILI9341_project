@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\intelFPGA_lite\17.1\project_imp\sdram_controller_de115.qsys --block-symbol-file --output-directory=C:\intelFPGA_lite\17.1\project_imp\sdram_controller_de115 --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading project_imp/sdram_controller_de115.qsys
+Progress: Reading input file
+Progress: Adding sram_0 [altera_up_avalon_sram 17.1]
+Progress: Parameterizing module sram_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\intelFPGA_lite\17.1\project_imp\sdram_controller_de115.qsys --synthesis=VERILOG --output-directory=C:\intelFPGA_lite\17.1\project_imp\sdram_controller_de115\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading project_imp/sdram_controller_de115.qsys
+Progress: Reading input file
+Progress: Adding sram_0 [altera_up_avalon_sram 17.1]
+Progress: Parameterizing module sram_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: sdram_controller_de115: Generating sdram_controller_de115 "sdram_controller_de115" for QUARTUS_SYNTH
+Info: sram_0: Starting Generation of the SRAM Controller
+Info: sram_0: "sdram_controller_de115" instantiated altera_up_avalon_sram "sram_0"
+Info: sdram_controller_de115: Done "sdram_controller_de115" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

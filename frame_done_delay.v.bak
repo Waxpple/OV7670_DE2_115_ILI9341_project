@@ -1,0 +1,7 @@
+module frame_done_delay(
+input frame_done,
+input clk,
+output frame_enable
+);
+
+endmodule

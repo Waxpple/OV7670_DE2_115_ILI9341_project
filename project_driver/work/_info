@@ -1,0 +1,434 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/ea924/Downloads/project_reacher/SCCB
+vcam_wrp
+Z0 !s110 1594787353
+!i10b 1
+!s100 c<lhTfg`j1]`oZC2Y_PU`2
+IGcS4;Sk<cSaH1WJUb_6lX2
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 dC:/Users/ea924/Downloads/project_reacher/project_driver
+w1594622265
+8C:/Users/ea924/Downloads/project_reacher/project_driver/camera_wrap.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/camera_wrap.v
+L0 8
+Z3 OV;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1594787353.715000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/camera_wrap.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/camera_wrap.v|
+!i113 1
+Z4 o-work work
+vcamera_config_rom_tb
+R0
+!i10b 1
+!s100 2c3QVW52V33TU0UTeKW?Y3
+I;Ohmb36U:;1_3@JNh0Z7?1
+R1
+R2
+w1594265646
+8C:/Users/ea924/Downloads/project_reacher/project_driver/camera_config_rom_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/camera_config_rom_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1594787353.313000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/camera_config_rom_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/camera_config_rom_tb.v|
+!i113 1
+R4
+vcamera_configure
+Z5 !s110 1594787352
+!i10b 1
+!s100 n:_2BohLDS=7nBbA;0Bc[2
+I4WC3><^6@f8>c1G=mDAS61
+R1
+R2
+Z6 w1586531892
+8C:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure.v
+Z7 L0 23
+R3
+r1
+!s85 0
+31
+!s108 1594787352.650000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure.v|
+!i113 1
+R4
+vcamera_configure_tb
+R0
+!i10b 1
+!s100 QLGWVJgJFBB^A52jONH3I1
+I<GdadHB<F[1ETz8Hh2DMZ1
+R1
+R2
+w1594350156
+8C:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1594787353.417000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/camera_configure_tb.v|
+!i113 1
+R4
+vcamera_read
+R5
+!i10b 1
+!s100 ]1ZI_Z_I4L>z]bC0W0Fkz0
+IU?FQ?8k1n]iBl]COeWGK21
+R1
+R2
+w1594786990
+8C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read.v
+FC:\Users\ea924\Downloads\project_reacher\project_driver\camera_read.v
+L0 21
+R3
+r1
+!s85 0
+31
+!s108 1594787352.752000
+!s107 C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read.v|
+!i113 1
+R4
+vcamera_read_2_tb
+Z8 !s110 1594787354
+!i10b 1
+!s100 OE0NYWXcNj8K@_PMIA7K23
+I7Zde_J?oG[fOffgzzE^8f3
+R1
+R2
+w1594787348
+8C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_2_tb.v
+FC:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_2_tb.v
+R7
+R3
+r1
+!s85 0
+31
+!s108 1594787354.229000
+!s107 C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_2_tb.v|
+!i113 1
+R4
+vcamera_read_tb
+R0
+!i10b 1
+!s100 jh4L?BH3@TVB<cBDXFUYU1
+IeQNHzG=g4HEVgN^BfRiJo0
+R1
+R2
+w1594787017
+8C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_tb.v
+FC:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_tb.v
+R7
+R3
+r1
+!s85 0
+31
+!s108 1594787353.515000
+!s107 C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\ea924\Downloads\project_reacher\project_driver\camera_read_tb.v|
+!i113 1
+R4
+vdouble_click
+Z9 !s110 1594376308
+!i10b 1
+!s100 ]g`?^i4=>A2Q17R>GRaNV1
+In2`oTnj7P]jCFLOfmlbm42
+R1
+R2
+Z10 w1494669818
+8C:/Users/ea924/Downloads/project_reacher/project_driver/double_click.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/double_click.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1594376308.344000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/double_click.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/double_click.v|
+!i113 1
+R4
+vdouble_click_tb
+R9
+!i10b 1
+!s100 VjWWf4FeQ[27Rl;]W7iLS1
+Ij@B<IfIEFM@goSbCdPL7k1
+R1
+R2
+R10
+8C:/Users/ea924/Downloads/project_reacher/project_driver/double_click_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/double_click_tb.v
+L0 9
+R3
+r1
+!s85 0
+31
+!s108 1594376308.016000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/double_click_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/double_click_tb.v|
+!i113 1
+R4
+vfifo
+R9
+!i10b 1
+!s100 RXP2KfmQ6FkRZmm`hZgdh0
+IcD`6goFN27Bcd;jz=]R=n3
+R1
+R2
+R10
+8C:/Users/ea924/Downloads/project_reacher/project_driver/fifo.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/fifo.v
+L0 19
+R3
+r1
+!s85 0
+31
+!s108 1594376308.462000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/fifo.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/fifo.v|
+!i113 1
+R4
+vfifo_tb
+R9
+!i10b 1
+!s100 MZXaXEF`N>f:LXn]ZBd5c3
+IA02ejcNL:e>F7QfVnh9WS0
+R1
+R2
+R10
+8C:/Users/ea924/Downloads/project_reacher/project_driver/fifo_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/fifo_tb.v
+L0 7
+R3
+r1
+!s85 0
+31
+!s108 1594376308.125000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/fifo_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/fifo_tb.v|
+!i113 1
+R4
+vframe_done_delay
+R0
+!i10b 1
+!s100 obPT@bnBc];kTJKWkl1563
+IVV^Kkl?Qkgf=@f10eQBlN2
+R1
+R2
+w1594695077
+8C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1594787353.825000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay.v|
+!i113 1
+R4
+vframe_done_delay_2
+R8
+!i10b 1
+!s100 ;]znK1g6B2o@?:5gPY5aU0
+IgVC>]GabMg[dZEE=^d7KW2
+R1
+R2
+w1594697091
+8C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1594787354.022000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2.v|
+!i113 1
+R4
+vframe_done_delay_2_tb
+R8
+!i10b 1
+!s100 BKTV?3ABIN3b<0GR6E[im3
+IdVcCQlJPZz?D5OBD;3j033
+R1
+R2
+w1594695592
+8C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1594787354.123000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_2_tb.v|
+!i113 1
+R4
+vframe_done_delay_tb
+R0
+!i10b 1
+!s100 l10LL1DVU5]TfJ`L8FnPZ0
+I^KIC4US?e4:S?WoBGoM?F2
+R1
+R2
+w1594637892
+8C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1594787353.922000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/frame_done_delay_tb.v|
+!i113 1
+R4
+vOV7670_config
+R5
+!i10b 1
+!s100 eVga1>_KnF;m?bQ8eS^E=0
+INfA^MZaG98oSSE98CiE9<3
+R1
+R2
+R6
+8C:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config.v
+R7
+R3
+r1
+!s85 0
+31
+!s108 1594787352.864000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config.v|
+!i113 1
+R4
+n@o@v7670_config
+vOV7670_config_rom
+R0
+!i10b 1
+!s100 hL:XnhziK]nVg2DZ0jgYF3
+IhY<kfmdih]ZM<9loz<<JW1
+R1
+R2
+w1594262444
+8C:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config_rom.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config_rom.v
+L0 24
+R3
+r1
+!s85 0
+31
+!s108 1594787352.979000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config_rom.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/OV7670_config_rom.v|
+!i113 1
+R4
+n@o@v7670_config_rom
+vSCCB_interface
+R0
+!i10b 1
+!s100 MDfLiAQm8@NljYP=GEh5h3
+I9^ncgJhOP^<o`Ic>zI`Q52
+R1
+R2
+w1594264167
+8C:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface.v
+R7
+R3
+r1
+!s85 0
+31
+!s108 1594787353.096000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface.v|
+!i113 1
+R4
+n@s@c@c@b_interface
+vSCCB_interface_tb
+R0
+!i10b 1
+!s100 cfJD0zF4hiKeGZGP1O_7S0
+IM@<e[`3bZEC>PkRKAjiHK2
+R1
+R2
+w1594264265
+8C:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1594787353.208000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/SCCB_interface_tb.v|
+!i113 1
+R4
+n@s@c@c@b_interface_tb
+vsdram_controller
+R9
+!i10b 1
+!s100 <`G1lNd?HUe:HOQPeNW;?1
+IT[3T=0Ymh7=IH^^VJamBb3
+R1
+R2
+w1594368954
+8C:\Users\ea924\Downloads\project_reacher\project_driver\sdram_controller.v
+FC:\Users\ea924\Downloads\project_reacher\project_driver\sdram_controller.v
+L0 25
+R3
+r1
+!s85 0
+31
+!s108 1594376308.569000
+!s107 C:\Users\ea924\Downloads\project_reacher\project_driver\sdram_controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\ea924\Downloads\project_reacher\project_driver\sdram_controller.v|
+!i113 1
+R4
+vsdram_controller_tb
+R9
+!i10b 1
+!s100 5Tb[M1lG>n<Pk_m_ASF3f3
+IEm9iiiYgo]DzE4UCGcVeg3
+R1
+R2
+w1594376286
+8C:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller_tb.v
+FC:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller_tb.v
+L0 7
+R3
+r1
+!s85 0
+31
+!s108 1594376308.236000
+!s107 C:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller_tb.v|
+!i113 1
+R4

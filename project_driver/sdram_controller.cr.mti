@@ -1,0 +1,43 @@
+C:/Users/ea924/Downloads/project_reacher/project_driver/double_click_tb.v {1 {vlog -work work -stats=none C:/Users/ea924/Downloads/project_reacher/project_driver/double_click_tb.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module double_click_tb
+
+Top level modules:
+	double_click_tb
+
+} {} {}} C:/Users/ea924/Downloads/project_reacher/project_driver/fifo_tb.v {1 {vlog -work work -stats=none C:/Users/ea924/Downloads/project_reacher/project_driver/fifo_tb.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module fifo_tb
+
+Top level modules:
+	fifo_tb
+
+} {} {}} C:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller.v {1 {vlog -work work -stats=none {C:\Users\ea924\Downloads\project_reacher\project_driver\sdram_controller.v}
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module sdram_controller
+
+Top level modules:
+	sdram_controller
+
+} {} {}} C:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller_tb.v {1 {vlog -work work -stats=none C:/Users/ea924/Downloads/project_reacher/project_driver/sdram_controller_tb.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module sdram_controller_tb
+
+Top level modules:
+	sdram_controller_tb
+
+} {} {}} C:/Users/ea924/Downloads/project_reacher/project_driver/double_click.v {1 {vlog -work work -stats=none C:/Users/ea924/Downloads/project_reacher/project_driver/double_click.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module double_click
+
+Top level modules:
+	double_click
+
+} {} {}} C:/Users/ea924/Downloads/project_reacher/project_driver/fifo.v {1 {vlog -work work -stats=none C:/Users/ea924/Downloads/project_reacher/project_driver/fifo.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module fifo
+
+Top level modules:
+	fifo
+
+} {} {}}

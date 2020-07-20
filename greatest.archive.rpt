@@ -1,0 +1,121 @@
+Archive Project report for greatest
+Wed Jul 15 17:11:28 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Wed Jul 15 17:11:28 2020 ;
+; Revision Name          ; greatest                              ;
+; Top-level Entity Name  ; greatest                              ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/intelFPGA_lite/17.1/project_imp/greatest.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'greatest.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4837 megabytes
+    Info: Processing ended: Wed Jul 15 17:11:28 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++-----------------------------------------------------------------------------------------+
+; Files Archived                                                                          ;
++-----------------------------------------------------------------------------------------+
+; File Name                                                                               ;
++-----------------------------------------------------------------------------------------+
+; ../../../Users/ea924/Downloads/project_reacher/projectv3/projectv2/verilog/imp/stp1.stp ;
+; c:/intelfpga_lite/17.1/quartus/bin64/assignment_defaults.qdf                            ;
+; C:/Users/ea924/Downloads/project_reacher/projectv3/projectv2/verilog/imp/stp1.stp       ;
+; camera_data.qip                                                                         ;
+; camera_data.v                                                                           ;
+; camera_data_bb.v                                                                        ;
+; db/stp2_auto_stripped.stp                                                               ;
+; fifo_1024_16_camera.qip                                                                 ;
+; fifo_1024_16_camera.v                                                                   ;
+; fifo_1024_16_camera_bb.v                                                                ;
+; fifo_big.qip                                                                            ;
+; fifo_big.v                                                                              ;
+; fifo_big_bb.v                                                                           ;
+; frame_done_delay.v                                                                      ;
+; greatest.qpf                                                                            ;
+; greatest.qsf                                                                            ;
+; greatest.v                                                                              ;
+; lcd/hellosoc_top.sv                                                                     ;
+; lcd/tft_ili9341.sv                                                                      ;
+; lcd/tft_ili9341_spi.sv                                                                  ;
+; output_files/stp2.stp                                                                   ;
+; pll_for_camera.ppf                                                                      ;
+; pll_for_camera.qip                                                                      ;
+; pll_for_camera.v                                                                        ;
+; pll_for_camera_bb.v                                                                     ;
+; pll_for_sdram_controller.ppf                                                            ;
+; pll_for_sdram_controller.qip                                                            ;
+; pll_for_sdram_controller.v                                                              ;
+; pll_for_sdram_controller_bb.v                                                           ;
+; Sdram_Control_4Port/command.v                                                           ;
+; Sdram_Control_4Port/control_interface.v                                                 ;
+; Sdram_Control_4Port/sdr_data_path.v                                                     ;
+; Sdram_Control_4Port/Sdram_Control_4Port.v                                               ;
+; Sdram_Control_4Port/Sdram_Params.h                                                      ;
+; Sdram_Control_4Port/Sdram_RD_FIFO.qip                                                   ;
+; Sdram_Control_4Port/Sdram_RD_FIFO.v                                                     ;
+; Sdram_Control_4Port/Sdram_WR_FIFO.qip                                                   ;
+; Sdram_Control_4Port/Sdram_WR_FIFO.v                                                     ;
+; synt/cam_config/camera_configure.v                                                      ;
+; synt/cam_config/camera_read.v                                                           ;
+; synt/cam_config/OV7670_config.v                                                         ;
+; synt/cam_config/OV7670_config_rom.v                                                     ;
+; synt/cam_config/SCCB_interface.v                                                        ;
+; synt/delay_rg.v                                                                         ;
+; synt/fsm_global.sv                                                                      ;
+; VGA_Controller/VGA_Ctrl.v                                                               ;
++-----------------------------------------------------------------------------------------+
+
+

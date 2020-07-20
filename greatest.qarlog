@@ -1,0 +1,56 @@
+Quartus Prime Archive log --	C:/intelFPGA_lite/17.1/project_imp/greatest.qarlog
+
+Archive:	C:/intelFPGA_lite/17.1/project_imp/greatest.qar
+Date:		Wed Jul 15 17:11:27 2020
+Quartus Prime		17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/ea924/Downloads/project_reacher/projectv3/projectv2/verilog/imp/stp1.stp
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/Sdram_Control_4Port.v
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/Sdram_Params.h
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/Sdram_RD_FIFO.qip
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/Sdram_RD_FIFO.v
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/Sdram_WR_FIFO.qip
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/Sdram_WR_FIFO.v
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/command.v
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/control_interface.v
+C:/intelFPGA_lite/17.1/project_imp/Sdram_Control_4Port/sdr_data_path.v
+C:/intelFPGA_lite/17.1/project_imp/VGA_Controller/VGA_Ctrl.v
+C:/intelFPGA_lite/17.1/project_imp/camera_data.qip
+C:/intelFPGA_lite/17.1/project_imp/camera_data.v
+C:/intelFPGA_lite/17.1/project_imp/camera_data_bb.v
+C:/intelFPGA_lite/17.1/project_imp/db/stp2_auto_stripped.stp
+C:/intelFPGA_lite/17.1/project_imp/fifo_1024_16_camera.qip
+C:/intelFPGA_lite/17.1/project_imp/fifo_1024_16_camera.v
+C:/intelFPGA_lite/17.1/project_imp/fifo_1024_16_camera_bb.v
+C:/intelFPGA_lite/17.1/project_imp/fifo_big.qip
+C:/intelFPGA_lite/17.1/project_imp/fifo_big.v
+C:/intelFPGA_lite/17.1/project_imp/fifo_big_bb.v
+C:/intelFPGA_lite/17.1/project_imp/frame_done_delay.v
+C:/intelFPGA_lite/17.1/project_imp/greatest.qpf
+C:/intelFPGA_lite/17.1/project_imp/greatest.qsf
+C:/intelFPGA_lite/17.1/project_imp/greatest.v
+C:/intelFPGA_lite/17.1/project_imp/lcd/hellosoc_top.sv
+C:/intelFPGA_lite/17.1/project_imp/lcd/tft_ili9341.sv
+C:/intelFPGA_lite/17.1/project_imp/lcd/tft_ili9341_spi.sv
+C:/intelFPGA_lite/17.1/project_imp/output_files/stp2.stp
+C:/intelFPGA_lite/17.1/project_imp/pll_for_camera.ppf
+C:/intelFPGA_lite/17.1/project_imp/pll_for_camera.qip
+C:/intelFPGA_lite/17.1/project_imp/pll_for_camera.v
+C:/intelFPGA_lite/17.1/project_imp/pll_for_camera_bb.v
+C:/intelFPGA_lite/17.1/project_imp/pll_for_sdram_controller.ppf
+C:/intelFPGA_lite/17.1/project_imp/pll_for_sdram_controller.qip
+C:/intelFPGA_lite/17.1/project_imp/pll_for_sdram_controller.v
+C:/intelFPGA_lite/17.1/project_imp/pll_for_sdram_controller_bb.v
+C:/intelFPGA_lite/17.1/project_imp/synt/cam_config/OV7670_config.v
+C:/intelFPGA_lite/17.1/project_imp/synt/cam_config/OV7670_config_rom.v
+C:/intelFPGA_lite/17.1/project_imp/synt/cam_config/SCCB_interface.v
+C:/intelFPGA_lite/17.1/project_imp/synt/cam_config/camera_configure.v
+C:/intelFPGA_lite/17.1/project_imp/synt/cam_config/camera_read.v
+C:/intelFPGA_lite/17.1/project_imp/synt/delay_rg.v
+C:/intelFPGA_lite/17.1/project_imp/synt/fsm_global.sv
+c:/intelfpga_lite/17.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 45 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

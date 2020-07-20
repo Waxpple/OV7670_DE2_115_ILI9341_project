@@ -23,9 +23,9 @@ module greatest(
    output        VGA_VS,      // VGA V_SYNC
    output        VGA_BLANK,   // VGA BLANK
    output        VGA_SYNC,    // VGA SYNC
-   output [9:0]  VGA_R,       // VGA Red[9:0]
-   output [9:0]  VGA_G,       // VGA Green[9:0]
-   output [9:0]  VGA_B,       // VGA Blue[9:0]
+   output [7:0]  VGA_R,       // VGA Red[7:0]
+   output [7:0]  VGA_G,       // VGA Green[7:0]
+   output [7:0]  VGA_B,       // VGA Blue[7:0]
 
 	//SDRAM
 	output wire cs_n,
@@ -87,7 +87,7 @@ assign LED[0] = wr_enable;
 assign LED[1] = !wr_enable;
 assign LED[2] = 1'b0;
 assign LED[3] = 1'b0;
-assign LED[4] = 1'b0;
+assign LED[4] = done_SCCB;
 assign LED[5] = wraddr[0];
 assign LED[6] = frame_enable;
 assign LED[7] = clk100;
@@ -154,7 +154,7 @@ always @(posedge clk25 or negedge rst_n)
 			end
 	end
 	
-
+wire done_SCCB;
 // camera inititalization
 camera_configure 
 #(	
@@ -166,7 +166,7 @@ camera_configure_0
 	.start ( ( strt == 3'h6 ) ),
 	.sioc  ( sioc             ),
 	.siod  ( siod             ),
-	.done  ( 			        )
+	.done  ( done_SCCB        )
 );
 wire 	[15:0] pixel_data;
 wire 	pixel_valid;
@@ -191,110 +191,121 @@ frame_done_delay frame_done_delay(
 .frame_enable   (frame_enable)
 );
 
-//Sdram_Control_4Port Sdram_Control_4Port_0(
-//		//	HOST Side
-//      .REF_CLK		(clk50),
-//      .RESET_N		(rst_n),
-//		.CLK			(),
-//		//	FIFO Write Side 1
-//      .WR1_DATA		(),
-//		.WR1				(),
-//		.WR1_ADDR		(),
-//		.WR1_MAX_ADDR	(),
-//		.WR1_LENGTH		(),
-//		.WR1_LOAD		(),
-//		.WR1_CLK			(pixel_valid),
-//		.WR1_FULL		(),
-//		.WR1_USE			(),
-//		//	FIFO Write Side 2
-//      .WR2_DATA		(),
-//		.WR2				(),
-//		.WR2_ADDR		(),
-//		.WR2_MAX_ADDR	(),
-//		.WR2_LENGTH		(),
-//		.WR2_LOAD		(),
-//		.WR2_CLK			(),
-//		.WR2_FULL		(),
-//		.WR2_USE			(),
-//		//	FIFO Read Side 1
-//      .RD1_DATA		(),
-//		.RD1				(),
-//		.RD1_ADDR		(),
-//		.RD1_MAX_ADDR	(),
-//		.RD1_LENGTH		(),
-//		.RD1_LOAD		(),	
-//		.RD1_CLK			(),
-//		.RD1_EMPTY		(),
-//		.RD1_USE			(),
-//		//	FIFO Read Side 2
-//      .RD2_DATA		(),
-//		.RD2				(),
-//		.RD2_ADDR		(),
-//		.RD2_MAX_ADDR	(),
-//		.RD2_LENGTH		(),
-//		.RD2_LOAD		(),
-//		.RD2_CLK			(),
-//		.RD2_EMPTY		(),
-//		.RD2_USE			(),
-//		//	SDRAM Side
-//      .SA				(sd_addr),
-//      .BA				(ba),
-//      .CS_N				(cs_n),
-//      .CKE				(Cke),
-//      .RAS_N			(ras_n),
-//      .CAS_N			(cas_n),
-//      .WE_N				(we_n),
-//      .DQ				(sd_data),
-//      .DQM				({dqm[1],dqm[0]}),
-//		.SDR_CLK			(sdram_clk),
-//		.CLK_18			()
-//        );
-wire [5:0] pixel_read;
-camera_data RAM (
-	.data	(pixel_data[10:5]),
-	.inclock	(pixel_valid),
-	.outclock	(clk25),
-	.rdaddress	(mVGA_ADDR),
-	.wraddress	(wraddr),
-	.wren	(frame_enable),
-	.q	(pixel_read)
-	
-	);
-wire [9:0]	mVGA_R;				//memory output to VGA
+
+wire [15:0] pixel_read;
+
+//
+//camera_data RAM (
+//	.data	(pixel_data[10:5]),
+//	.inclock	(pixel_valid),
+//	.outclock	(clk25),
+//	.rdaddress	(mVGA_ADDR[18:0]),
+//	.wraddress	({wraddr-19'd1}),
+//	.wren	(frame_enable),
+//	.rden	(VGA_Read),
+//	.q	(pixel_read)
+//	
+//	);
+
+wire [4:0] CMOS_R;
+wire [5:0] CMOS_G;
+wire [4:0] CMOS_B;
+assign CMOS_R = pixel_read[15:11];
+assign CMOS_G = pixel_read[10:5];
+assign CMOS_B = pixel_read[4:0];
+wire [9:0]	mVGA_R;				//memory output to VGA 8bit only
 wire [9:0]	mVGA_G;
 wire [9:0]	mVGA_B;
-wire [18:0]	mVGA_ADDR;
-//wire [16:0] mVGA_ADDR_2;			//video memory address
-wire [9:0]  Coord_X, Coord_Y;
-//assign mVGA_ADDR_2 = Coord_Y[8:1]*320 + Coord_X[9:1]+1;
-//assign mVGA_R = {{5{1'b0}},pixel_read[15:11]};
-assign mVGA_R = {{10{1'b0}}};
+wire [21:0]	mVGA_ADDR;
 
-assign mVGA_G = {{4{1'b0}},pixel_read};
-//assign mVGA_B = {{5{1'b0}},pixel_read[4:0]};
-assign mVGA_B = {{10{1'b0}}};
-assign VGA_CLK = clk25;
-VGA_Controller		u1	(	//	Host Side
-							.iCursor_RGB_EN(4'b0111),
-							.oAddress(mVGA_ADDR),
-							.oCoord_X(Coord_X),
-							.oCoord_Y(Coord_Y),
+assign mVGA_R = {CMOS_R,{5{1'b0}}};
+assign mVGA_G = {CMOS_G,{4{1'b0}}};
+assign mVGA_B = {CMOS_B,{5{1'b0}}};
+
+wire [9:0] vga_r10;
+wire [9:0] vga_g10;
+wire [9:0] vga_b10;
+assign VGA_R = vga_r10[9:2];
+assign VGA_G = vga_g10[9:2];
+assign VGA_B = vga_b10[9:2];
+wire VGA_Read;
+VGA_Ctrl			u9	(	//	Host Side
 							.iRed(mVGA_R),
 							.iGreen(mVGA_G),
 							.iBlue(mVGA_B),
-//							.iRed(pixel_read[15:11]),
-//							.iGreen(pixel_read[10:5]),
-//							.iBlue(pixel_read[4:0]),
+							.oCurrent_X(),
+							.oCurrent_Y(),
+							.oAddress	(mVGA_ADDR),
+							.oRequest(VGA_Read),
 							//	VGA Side
-							.oVGA_R(VGA_R),
-							.oVGA_G(VGA_G),
-							.oVGA_B(VGA_B),
-							.oVGA_H_SYNC(VGA_HS),
-							.oVGA_V_SYNC(VGA_VS),
+							.oVGA_R(vga_r10 ),
+							.oVGA_G(vga_g10 ),
+							.oVGA_B(vga_b10 ),
+							.oVGA_HS(VGA_HS),
+							.oVGA_VS(VGA_VS),
 							.oVGA_SYNC(VGA_SYNC),
 							.oVGA_BLANK(VGA_BLANK),
+							.oVGA_CLOCK(VGA_CLK),
 							//	Control Signal
 							.iCLK(clk25),
 							.iRST_N(rst_n)	);
 
+Sdram_Control_4Port Sdram_Control_4Port_0(
+		//	HOST Side
+      .REF_CLK		(clk50),
+      .RESET_N		(rst_n),
+		.CLK			(),
+		//	FIFO Write Side 1
+      .WR1_DATA		(pixel_data),
+		.WR1				(frame_enable),
+		.WR1_ADDR		(0),
+		.WR1_MAX_ADDR	(640*480),
+		.WR1_LENGTH		(9'h80),
+		.WR1_LOAD		(!rst_n),
+		.WR1_CLK			(pixel_valid),
+		.WR1_FULL		(),
+		.WR1_USE			(),
+		//	FIFO Write Side 2
+      .WR2_DATA		(),
+		.WR2				(),
+		.WR2_ADDR		(),
+		.WR2_MAX_ADDR	(),
+		.WR2_LENGTH		(),
+		.WR2_LOAD		(),
+		.WR2_CLK			(),
+		.WR2_FULL		(),
+		.WR2_USE			(),
+		//	FIFO Read Side 1
+      .RD1_DATA		(pixel_read),
+		.RD1				(VGA_Read),
+		.RD1_ADDR		(0),
+		.RD1_MAX_ADDR	(640*480),
+		.RD1_LENGTH		(9'h80),
+		.RD1_LOAD		(!rst_n),	
+		.RD1_CLK			(clk25),
+		.RD1_EMPTY		(),
+		.RD1_USE			(),
+		//	FIFO Read Side 2
+      .RD2_DATA		(),
+		.RD2				(),
+		.RD2_ADDR		(),
+		.RD2_MAX_ADDR	(),
+		.RD2_LENGTH		(),
+		.RD2_LOAD		(),
+		.RD2_CLK			(),
+		.RD2_EMPTY		(),
+		.RD2_USE			(),
+		//	SDRAM Side
+      .SA				(sd_addr),
+      .BA				(ba),
+      .CS_N				(cs_n),
+      .CKE				(Cke),
+      .RAS_N			(ras_n),
+      .CAS_N			(cas_n),
+      .WE_N				(we_n),
+      .DQ				(sd_data),
+      .DQM				({dqm[1],dqm[0]}),
+		.SDR_CLK			(sdram_clk),
+		.CLK_18			()
+        );
 endmodule

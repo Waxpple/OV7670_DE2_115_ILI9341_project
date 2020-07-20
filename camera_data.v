@@ -41,6 +41,7 @@ module camera_data (
 	inclock,
 	outclock,
 	rdaddress,
+	rden,
 	wraddress,
 	wren,
 	q);
@@ -49,6 +50,7 @@ module camera_data (
 	input	  inclock;
 	input	  outclock;
 	input	[18:0]  rdaddress;
+	input	  rden;
 	input	[18:0]  wraddress;
 	input	  wren;
 	output	[5:0]  q;
@@ -56,6 +58,7 @@ module camera_data (
 // synopsys translate_off
 `endif
 	tri1	  inclock;
+	tri1	  rden;
 	tri0	  wren;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
@@ -70,6 +73,7 @@ module camera_data (
 				.clock0 (inclock),
 				.clock1 (outclock),
 				.data_a (data),
+				.rden_b (rden),
 				.wren_a (wren),
 				.q_b (sub_wire0),
 				.aclr0 (1'b0),
@@ -86,7 +90,6 @@ module camera_data (
 				.eccstatus (),
 				.q_a (),
 				.rden_a (1'b1),
-				.rden_b (1'b1),
 				.wren_b (1'b0));
 	defparam
 		altsyncram_component.address_aclr_b = "NONE",
@@ -102,7 +105,8 @@ module camera_data (
 		altsyncram_component.outdata_aclr_b = "NONE",
 		altsyncram_component.outdata_reg_b = "CLOCK1",
 		altsyncram_component.power_up_uninitialized = "FALSE",
-		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
+		altsyncram_component.rdcontrol_reg_b = "CLOCK0",
+		altsyncram_component.read_during_write_mode_mixed_ports = "OLD_DATA",
 		altsyncram_component.widthad_a = 19,
 		altsyncram_component.widthad_b = 19,
 		altsyncram_component.width_a = 6,
@@ -152,7 +156,7 @@ endmodule
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "1"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
-// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "2"
+// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "1"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_B NUMERIC "3"
 // Retrieval info: PRIVATE: REGdata NUMERIC "1"
@@ -173,7 +177,7 @@ endmodule
 // Retrieval info: PRIVATE: WRADDR_REG_B NUMERIC "0"
 // Retrieval info: PRIVATE: WRCTRL_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: enable NUMERIC "0"
-// Retrieval info: PRIVATE: rden NUMERIC "0"
+// Retrieval info: PRIVATE: rden NUMERIC "1"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: ADDRESS_ACLR_B STRING "NONE"
 // Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK0"
@@ -188,7 +192,8 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_REG_B STRING "CLOCK1"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
-// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
+// Retrieval info: CONSTANT: RDCONTROL_REG_B STRING "CLOCK0"
+// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "OLD_DATA"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "19"
 // Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "19"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "6"
@@ -199,6 +204,7 @@ endmodule
 // Retrieval info: USED_PORT: outclock 0 0 0 0 INPUT NODEFVAL "outclock"
 // Retrieval info: USED_PORT: q 0 0 6 0 OUTPUT NODEFVAL "q[5..0]"
 // Retrieval info: USED_PORT: rdaddress 0 0 19 0 INPUT NODEFVAL "rdaddress[18..0]"
+// Retrieval info: USED_PORT: rden 0 0 0 0 INPUT VCC "rden"
 // Retrieval info: USED_PORT: wraddress 0 0 19 0 INPUT NODEFVAL "wraddress[18..0]"
 // Retrieval info: USED_PORT: wren 0 0 0 0 INPUT GND "wren"
 // Retrieval info: CONNECT: @address_a 0 0 19 0 wraddress 0 0 19 0
@@ -206,6 +212,7 @@ endmodule
 // Retrieval info: CONNECT: @clock0 0 0 0 0 inclock 0 0 0 0
 // Retrieval info: CONNECT: @clock1 0 0 0 0 outclock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 6 0 data 0 0 6 0
+// Retrieval info: CONNECT: @rden_b 0 0 0 0 rden 0 0 0 0
 // Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
 // Retrieval info: CONNECT: q 0 0 6 0 @q_b 0 0 6 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL camera_data.v TRUE

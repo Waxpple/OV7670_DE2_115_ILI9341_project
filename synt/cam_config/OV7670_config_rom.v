@@ -114,8 +114,8 @@ module OV7670_config_rom(
     33: dout <= 16'hB3_80; //THL_ST*/
 	 0:  dout <= 16'h12_80; //reset
     1:  dout <= 16'hFF_F0; //delay
-    2:  dout <= 16'h12_04;//04; // COM7     set RGB color output
-    3:  dout <= 16'h11_01; // CLKRC     internal PLL matches input clock
+    2:  dout <= 16'h12_04;//04; // COM7,     set RGB color output
+    3:  dout <= 16'h11_80; // CLKRC     internal PLL matches input clock
     4:  dout <= 16'h0C_00; // COM3,     default settings
     5:  dout <= 16'h3E_00; // COM14,    no scaling, normal pclock
     6:  dout <= 16'h04_00; // COM1,     disable CCIR656
@@ -190,6 +190,11 @@ module OV7670_config_rom(
     72: dout <= 16'haa_94; //HAECC7
 	 //73: dout <= 16'h13_e5; //COM8, enable AGC / AEC
     73: dout <= 16'h13_e7; //COM8, enable AGC / AEC
+	 
+	 //experimental
+	 74: dout <= 16'h6b_00;
+	 //
+	 
 	 //
 	 //74: dout <= 16'h01_96;
 	 //75: dout <= 16'h02_40;

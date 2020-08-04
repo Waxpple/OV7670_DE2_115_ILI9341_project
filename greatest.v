@@ -51,6 +51,8 @@ module greatest(
 	output wire frame_done_0
 );
 wire fbClk;
+wire [15:0]tft_pixel_read;
+wire tft_Read;
 wire rst_n;
 wire clk25;
 wire clk100;
@@ -104,18 +106,26 @@ pll_for_camera pll_for_camera_0
 	.locked   ( locked )
 );
 
-
-//pll_for_sdram_controller pll_for_sdram_controller_0(
-//	.areset   ( !rst_n ),
-//	.inclk0   ( clk50 ),
-//	.c0       ( clk143 )
-//);
-//sampling_freq sampling_freq_0(
-//	.areset   ( !rst_n ),
-//	.inclk0   ( clk50 ),
-//	.c0       ( clk500 )
-//);
 //TFT display
+//
+tft_top TFT(
+	.tft_sdo            ( tft_sdo ), 
+	.tft_sck            ( tft_sck ), 
+	.tft_sdi            ( tft_sdi ), 
+	.tft_dc             ( tft_dc ), 
+	.tft_reset          ( tft_reset ), 
+	.tft_cs             ( tft_cs ),
+	.rst_n              ( rst_n ),
+
+	.tft_pixel_read     ( tft_pixel_read ),
+	.tft_clk            ( clk100 ),
+	.fbClk              ( fbClk ),
+	.r                  ( r ),
+	.g                  ( g ),
+	.b                  ( b ),
+   .tft_Read			  ( tft_Read)
+);
+
 
 //hellosoc_top TFT(
 //	.tft_sdo            ( tft_sdo ), 
@@ -137,6 +147,18 @@ pll_for_camera pll_for_camera_0
 //	.start_28           ( start_image ),
 //	.RESULT             ( RESULT_2 )
 //);
+
+//pll_for_sdram_controller pll_for_sdram_controller_0(
+//	.areset   ( !rst_n ),
+//	.inclk0   ( clk50 ),
+//	.c0       ( clk143 )
+//);
+//sampling_freq sampling_freq_0(
+//	.areset   ( !rst_n ),
+//	.inclk0   ( clk50 ),
+//	.c0       ( clk500 )
+//);
+
 // start camera inititalization
 reg [2:0] strt;
 
@@ -259,7 +281,8 @@ Sdram_Control_4Port Sdram_Control_4Port_0(
       .WR1_DATA		(pixel_data),
 		.WR1				(frame_enable),
 		.WR1_ADDR		(0),
-		.WR1_MAX_ADDR	(640*480),
+		//VGA 640x320, tft 320x240
+		.WR1_MAX_ADDR	(320*240),
 		.WR1_LENGTH		(9'h80),
 		.WR1_LOAD		(!rst_n),
 		.WR1_CLK			(pixel_valid),
@@ -286,13 +309,13 @@ Sdram_Control_4Port Sdram_Control_4Port_0(
 		.RD1_EMPTY		(),
 		.RD1_USE			(),
 		//	FIFO Read Side 2
-      .RD2_DATA		(),
-		.RD2				(),
-		.RD2_ADDR		(),
-		.RD2_MAX_ADDR	(),
-		.RD2_LENGTH		(),
-		.RD2_LOAD		(),
-		.RD2_CLK			(),
+      .RD2_DATA		(tft_pixel_read),
+		.RD2				(tft_Read),
+		.RD2_ADDR		(0),
+		.RD2_MAX_ADDR	(320*240),
+		.RD2_LENGTH		(9'h80),
+		.RD2_LOAD		(!rst_n),
+		.RD2_CLK			(fbClk),
 		.RD2_EMPTY		(),
 		.RD2_USE			(),
 		//	SDRAM Side

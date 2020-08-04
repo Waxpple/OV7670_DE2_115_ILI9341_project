@@ -1,8 +1,8 @@
 /**
- * simple controller for ISSI IS42S16160G-7 SDRAM found in De0 Nano
- *  16Mbit x 16 data bit bus (32 megabytes)
+ * simple controller for ISSI IS42S16320B SDRAM found in De2 115
+ *  64Mbit x 16 data bit bus (128 megabytes)
  *  Default options
- *    133Mhz
+ *    143Mhz
  *    CAS 3
  *
  *  Very simple host interface
@@ -37,19 +37,20 @@ module sdram_controller (
 
     /* SDRAM SIDE */
     addr, bank_addr, data, clock_enable, cs_n, ras_n, cas_n, we_n,
-    data_mask_low, data_mask_high
+    data_mask_low_0, data_mask_high_0,data_mask_low_1, data_mask_high_1
 );
 
 /* Internal Parameters */
 parameter ROW_WIDTH = 13;
 parameter COL_WIDTH = 10;
-parameter BANK_WIDTH = 4;
+parameter BANK_WIDTH = 2;
 
 parameter SDRADDR_WIDTH = ROW_WIDTH > COL_WIDTH ? ROW_WIDTH : COL_WIDTH;
+                        //=13
 parameter HADDR_WIDTH = BANK_WIDTH + ROW_WIDTH + COL_WIDTH;
-
+// 13+10+2 = 25
 parameter CLK_FREQUENCY = 143;  // Mhz
-parameter REFRESH_TIME =  64;   // ms     (how often we need to refresh)
+parameter REFRESH_TIME =  32;   // ms     (how often we need to refresh)
 parameter REFRESH_COUNT = 8192; // cycles (how many refreshes required per refresh time)
 
 // clk / refresh =  clk / sec
@@ -102,7 +103,9 @@ localparam CMD_PALL = 8'b10010001,
 /* Interface Definition */
 /* HOST INTERFACE */
 input  [HADDR_WIDTH-1:0]   wr_addr;
+//24 bit
 input  [15:0]              wr_data;
+//32bit
 input                      wr_enable;
 
 input  [HADDR_WIDTH-1:0]   rd_addr;
@@ -123,32 +126,33 @@ output                     cs_n;
 output                     ras_n;
 output                     cas_n;
 output                     we_n;
-output                     data_mask_low;//0
-output                     data_mask_high;//1
-output 							data_mask_low_2;//2
-output 							data_mask_high_2;//3
-
+output                     data_mask_low_0;
+output                     data_mask_high_0;
+output                     data_mask_low_1;
+output                     data_mask_high_1;
 /* I/O Registers */
 
 reg  [HADDR_WIDTH-1:0]   haddr_r;
 reg  [15:0]              wr_data_r;
 reg  [15:0]              rd_data_r;
 reg                      busy;
-reg                      data_mask_low_r;
-reg                      data_mask_high_r;
-reg 							data_mask_low_2_r;//2
-reg 							data_mask_high_2_r;//3
+reg                      data_mask_low_r_0;
+reg                      data_mask_high_r_0;
+reg                      data_mask_low_r_1;
+reg                      data_mask_high_r_1;
 reg [SDRADDR_WIDTH-1:0]  addr_r;
 reg [BANK_WIDTH-1:0]     bank_addr_r;
 reg                      rd_ready_r;
 
 wire [15:0]              data_output;
-wire                     data_mask_low, data_mask_high,data_mask_low_2, data_mask_high_2;
+wire                     data_mask_low_0, data_mask_high_0;
+wire                     data_mask_low_1, data_mask_high_1;
 
-assign data_mask_high = data_mask_high_r;
-assign data_mask_low  = data_mask_low_r;
-assign data_mask_low_2 = data_mask_low_2_r;
-assign data_mask_high_2 = data_mask_high_2_r;
+assign data_mask_high_0 = data_mask_high_r_0;
+assign data_mask_low_0  = data_mask_low_r_0;
+
+assign data_mask_high_1 = data_mask_high_r_1;
+assign data_mask_low_1  = data_mask_low_r_1;
 assign rd_data        = rd_data_r;
 
 /* Internal Wiring */
@@ -169,7 +173,7 @@ assign {clock_enable, cs_n, ras_n, cas_n, we_n} = command[7:3];
 assign bank_addr      = (state[4]) ? bank_addr_r : command[2:1];
 assign addr           = (state[4] | state == INIT_LOAD) ? addr_r : { {SDRADDR_WIDTH-11{1'b0}}, command[0], 10'd0 };
 
-assign data = (state == WRIT_CAS) ? wr_data_r : 16'bz;
+assign data = (state == WRIT_CAS) ? wr_data_r : 32'bz;
 assign rd_ready = rd_ready_r;
 
 // HOST INTERFACE
@@ -182,8 +186,8 @@ always @ (posedge clk)
     state_cnt <= 4'hf;
 
     haddr_r <= {HADDR_WIDTH{1'b0}};
-    wr_data_r <= 16'b0;
-    rd_data_r <= 16'b0;
+    wr_data_r <= 32'b0;
+    rd_data_r <= 32'b0;
     busy <= 1'b0;
     end
   else
@@ -232,9 +236,9 @@ always @ (posedge clk)
 always @*
 begin
     if (state[4])
-      {data_mask_low_r, data_mask_high_r} = 2'b00;
+      {data_mask_low_r_0, data_mask_high_r_0,data_mask_low_r_1, data_mask_high_r_1} = 4'b0000;
     else
-      {data_mask_low_r, data_mask_high_r} = 2'b11;
+      {data_mask_low_r_0, data_mask_high_r_0,data_mask_low_r_1, data_mask_high_r_1} = 4'b1111;
 
    bank_addr_r = 2'b00;
    addr_r = {SDRADDR_WIDTH{1'b0}};
@@ -249,10 +253,10 @@ begin
      // Send Column Address
      // Set bank to bank to precharge
      bank_addr_r = haddr_r[HADDR_WIDTH-1:HADDR_WIDTH-(BANK_WIDTH)];
-
+     //                       24:24-2 = [24:22]      
      // Examples for math
      //               BANK  ROW    COL
-     // HADDR_WIDTH   4 +   13 +   10   = 27
+     // HADDR_WIDTH   2 +   13 +   10   = 25
      // SDRADDR_WIDTH 13
 
      // Set CAS address to:

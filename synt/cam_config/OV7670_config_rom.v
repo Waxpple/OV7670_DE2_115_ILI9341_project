@@ -114,7 +114,7 @@ module OV7670_config_rom(
     33: dout <= 16'hB3_80; //THL_ST*/
 	 0:  dout <= 16'h12_80; //reset
     1:  dout <= 16'hFF_F0; //delay
-    2:  dout <= 16'h12_04;//04; // COM7,     set RGB color output
+    2:  dout <= 16'h12_14;//04; // COM7,     set RGB color output
     3:  dout <= 16'h11_80; // CLKRC     internal PLL matches input clock
     4:  dout <= 16'h0C_00; // COM3,     default settings
     5:  dout <= 16'h3E_00; // COM14,    no scaling, normal pclock

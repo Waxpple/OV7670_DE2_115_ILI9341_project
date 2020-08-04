@@ -3,14 +3,14 @@ module tft_ili9341(
 		input clk,
 		input tft_sdo, output wire tft_sck, output wire tft_sdi, 
 		output wire tft_dc, output reg tft_reset, output wire tft_cs,
-		input[15:0] framebufferData, output wire framebufferClk,output reg tft_Read
+		input[15:0] framebufferData, output wire framebufferClk
 	);
 	
 	parameter INPUT_CLK_MHZ = 120; /* recommended */
 	
 	// Initial assignments
 	initial tft_reset = 1'b1;
-	initial tft_Read = 1'b0;
+
 	// Assign pins and modules
 	reg[8:0] spiData; 
 	reg spiDataSet = 1'b0;
@@ -90,7 +90,6 @@ module tft_ili9341(
 					tft_reset <= 1'b1; // release pin
 					remainingDelayTicks <= 24'(INPUT_CLK_MHZ * 120000); // min: 120ms
 					state <= WAIT_FOR_POWERUP;
-					tft_Read <= 1'b1;
 					frameBufferLowNibble <= 1'b0; // request first pixel
 				end
 				

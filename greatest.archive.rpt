@@ -1,5 +1,5 @@
 Archive Project report for greatest
-Wed Jul 15 17:11:28 2020
+Sun Aug 07 17:06:56 2022
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Wed Jul 15 17:11:28 2020 ;
+; Archive Project Status ; Successful - Sun Aug 07 17:06:56 2022 ;
 ; Revision Name          ; greatest                              ;
 ; Top-level Entity Name  ; greatest                              ;
 ; Family                 ; Cyclone IV E                          ;
@@ -53,16 +53,16 @@ Info: Archive will store files relative to the closest common parent directory
 Info (13213): Using common directory C:
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/intelFPGA_lite/17.1/project_imp/greatest.qar'
+Info: Generated archive 'C:/Users/ea924/Downloads/project_VGG_archived_220807.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'greatest.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/17.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4837 megabytes
-    Info: Processing ended: Wed Jul 15 17:11:28 2020
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Sun Aug 07 17:06:56 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +-----------------------------------------------------------------------------------------+
@@ -90,6 +90,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; lcd/hellosoc_top.sv                                                                     ;
 ; lcd/tft_ili9341.sv                                                                      ;
 ; lcd/tft_ili9341_spi.sv                                                                  ;
+; lcd/tft_top.sv                                                                          ;
 ; output_files/stp2.stp                                                                   ;
 ; pll_for_camera.ppf                                                                      ;
 ; pll_for_camera.qip                                                                      ;
